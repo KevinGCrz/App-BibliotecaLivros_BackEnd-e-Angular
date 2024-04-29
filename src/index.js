@@ -1,3 +1,3 @@
 import { Server } from './Server.js'
 
-new Server(3333)
+new Server(5252)

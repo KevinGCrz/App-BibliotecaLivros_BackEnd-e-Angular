@@ -1,7 +1,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 
-import { tasksRouter } from './routes/tasks.route.js'
+import { booksRouter } from './routes/books.route.js'
 
 export class Server {
     constructor(port){
@@ -23,7 +23,7 @@ export class Server {
     setRoutes()
     {
         this.app.use(express.static('public'))
-        this.app.use('/api/tasks', tasksRouter)
+        this.app.use('/api/books', booksRouter)
     }
 
     listen(port)

@@ -1,7 +1,7 @@
 {
   "name": "todo",
   "version": "1.0.0",
-  "description": "ToDo App",
+  "description": "LivrosApp",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --experimental-modules --es-module-specifier-resolution=node src/index.js"

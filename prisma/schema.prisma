@@ -13,8 +13,9 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Task {
+model Book {
   id        Int @id @default(autoincrement())
   name      String
-  checked   Boolean
+  autor     String
+  year      String
 }

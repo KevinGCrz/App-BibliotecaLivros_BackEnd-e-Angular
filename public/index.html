@@ -1,22 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" ng-app="todo-app">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Biblioteca Central</title>
 </head>
-<body>
-    <h1>To Do App</h1>
 
-    <label class="add-task">
-        <input type="text" placeholder="Qual sua próxima tarefa...">
-        <button type="button">Add</button>
+<body ng-controller="TodoController">
+
+    <div class="header">
+        <h1 ng-bind="title"></h1>
+    </div>
+
+    <label class="add-book">
+
+        <div class="name-book inputStyle">
+            <input type="text"  ng-model="bookName"  placeholder="Qual o título...">
+        </div>
+        <div class="autor-book inputStyle">
+            <input type="text"  ng-model="autorName"  placeholder="Qual o autor da Obra..." >
+        </div>
+        <div class="year-book inputStyle">
+            <input type="text"  ng-model="yearBook"  placeholder="Ano de publicação..." >
+        </div>
+        <button type="button" ng-click="addBook()">Adicionar a coleção</button>
+    
     </label>
 
-    <div class="minhas-tarefas">
-        <div class="task-list">
+    <div class="meus-livros">
+        
+        <div class="book-list">
+            <div class="book" ng-repeat="book in bookList">
+                <img src="./assets/css/img/book.png" alt="">
+                <p>{{ book.name }}</p>
+                <p>{{ book.autor }}</p>
+                <p>{{ book.year }}</p>
+                <button ng-click="deleteBook(book.id)"><img src="./assets/css/img/trash.png" alt=""></button>
+            </div>
         </div>
+
+        <p ng-if="bookList.length == 0" class="no-books">Nenhum livro cadastrado...</p>
+
     </div>
 
 <script src="./assets/js/main.js"></script>

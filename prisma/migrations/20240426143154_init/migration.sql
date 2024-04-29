@@ -1,6 +1,7 @@
 -- CreateTable
-CREATE TABLE "Task" (
+CREATE TABLE "Book" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "name" TEXT NOT NULL,
-    "checked" BOOLEAN NOT NULL
+    "autor" TEXT NOT NULL,
+    "year" TEXT NOT NULL
 );
